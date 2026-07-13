@@ -1,0 +1,32 @@
+{
+  "dataset": "spiral",
+  "n_classes": 3,
+  "n_samples": 3000,
+  "input_dim": 2,
+  "val_split": 0.2,
+  "test_split": 0.2,
+  "hidden_dims": [
+    256,
+    256
+  ],
+  "activation": "relu",
+  "init": "he",
+  "optimizer": "adam",
+  "lr": 0.003,
+  "weight_decay": 0.0,
+  "batch_size": 128,
+  "epochs": 60,
+  "target_sparsity": 0.9,
+  "pruning_method": "magnitude",
+  "schedule": "cubic",
+  "prune_start_epoch": 10,
+  "prune_end_epoch": 45,
+  "prune_every": 1,
+  "regrowth": false,
+  "regrowth_fraction": 0.0,
+  "seed": 0,
+  "results_dir": "results",
+  "models_dir": "models",
+  "log_every": 5,
+  "verbose": true
+}

@@ -1,0 +1,5 @@
+method,target_sparsity,actual_sparsity_mean,acc_mean,acc_std,flops_reduction_mean,n_seeds
+magnitude,0.0,0.0000,0.9958,0.0025,0.0000,2
+magnitude,0.9,0.8140,0.9758,0.0158,0.8140,2
+saliency,0.0,0.0000,0.9958,0.0025,0.0000,2
+saliency,0.9,0.8140,0.9767,0.0117,0.8140,2

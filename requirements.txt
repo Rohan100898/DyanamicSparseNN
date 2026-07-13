@@ -1,0 +1,12 @@
+# Core runtime dependencies for DynamicSparseNN.
+# The engine, training, pruning and Pareto sweep all run with just these three.
+numpy>=1.23
+scipy>=1.9          # genuine CSR sparse matmul in pruning/sparse_forward.py
+matplotlib>=3.5     # results/*.png plots
+
+# Optional: only needed to train on real MNIST instead of the built-in
+# synthetic spiral dataset (`--dataset mnist`).
+# scikit-learn>=1.1
+
+# Optional: test runner (tests also run as plain scripts without it).
+# pytest>=7.0

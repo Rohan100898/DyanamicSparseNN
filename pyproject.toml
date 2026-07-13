@@ -1,0 +1,38 @@
+[project]
+name = "dynamic-sparse-nn"
+version = "0.1.0"
+description = "A from-scratch deep-learning framework with reverse-mode autograd and dynamic, gradient-aware self-pruning. No PyTorch, no TensorFlow."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "DynamicSparseNN" }]
+dependencies = [
+    "numpy>=1.23",
+    "scipy>=1.9",
+    "matplotlib>=3.5",
+]
+
+[project.optional-dependencies]
+# Only needed if you want to run on real MNIST instead of the built-in
+# synthetic spiral dataset. Everything else runs offline.
+mnist = ["scikit-learn>=1.1"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+dsnn-train = "train:main"
+dsnn-eval = "evaluate:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# This is an application-style repo (flat modules), not a single importable
+# package, so we disable automatic package discovery.
+py-modules = ["config", "train", "evaluate"]
+packages = ["engine", "nn", "optim", "pruning", "data", "utils", "experiments"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["*_test.py", "gradient_check.py"]
+python_functions = ["test_*"]
